@@ -62,8 +62,9 @@ if st.button("PROCESSAR DADOS"):
     if pergunta:
         with st.spinner('📡 Andoris contatando base de dados...'):
             try:
-                # Pega o link do cofre secreto do Streamlit
-                webhook_url = st.secrets["WEBHOOK_URL"]
+    webhook_url = st.secrets["WEBHOOK_URL"]
+except:
+    webhook_url = "LINK_DE_TESTE_AQUI_SE_QUISER" # Opcional, apenas para não quebrar localmente
 
                 # 2. O pacote de dados que vamos enviar (JSON)
                 payload = {"pergunta": pergunta}
