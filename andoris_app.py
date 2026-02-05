@@ -49,6 +49,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 # --- TÍTULO (COM COR TURQUESA FORÇADA) ---
 st.markdown("<h1 style='text-align: center; color: #40E0D0;'>🛡️ PROTOCOLO ANDORIS</h1>", unsafe_allow_html=True)
+
 # --- SUBTÍTULO ---
 st.markdown("<h3 style='text-align: center; color: white;'>Base de Conhecimento Tático PCS - 2026</h3>", unsafe_allow_html=True)
 st.divider()
@@ -90,6 +91,7 @@ if st.button("PROCESSAR DADOS"):
 st.markdown("---")
 
 st.markdown("<p style='text-align: center; color: gray;'>Desenvolvido pelo Comandante Lobo Alfa | Powered by AURA & n8n</p>", unsafe_allow_html=True)
+
 
 
 
