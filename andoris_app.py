@@ -61,7 +61,7 @@ if st.button("PROCESSAR DADOS"):
         with st.spinner('📡 Andoris contatando base de dados...'):
             try:
                 # Pega o link do cofre secreto do Streamlit
-webhook_url = st.secrets["WEBHOOK_URL"]
+                webhook_url = st.secrets["https://loboalpha.app.n8n.cloud/webhook-test/andoris-chat-pcs"]
 
                 # 2. O pacote de dados que vamos enviar (JSON)
                 payload = {"pergunta": pergunta}
@@ -89,5 +89,6 @@ webhook_url = st.secrets["WEBHOOK_URL"]
 st.markdown("---")
 
 st.markdown("<p style='text-align: center; color: gray;'>Desenvolvido pelo Comandante Lobo Alfa | Powered by AURA & n8n</p>", unsafe_allow_html=True)
+
 
 
