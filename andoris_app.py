@@ -33,7 +33,7 @@ if st.button("PROCESSAR DADOS"):
         with st.spinner('📡 Andoris contatando base de dados...'):
             try:
                 # 1. A URL do seu n8n (COLE AQUI A URL QUE VOCÊ COPIOU)
-                webhook_url = "https://loboalpha.app.n8n.cloud/webhook-test/andoris-chat-pcs"
+                webhook_url = "https://loboalpha.app.n8n.cloud/webhook/andoris-chat-pcs"
                 # 2. O pacote de dados que vamos enviar (JSON)
                 payload = {"pergunta": pergunta}
                 
@@ -58,4 +58,5 @@ if st.button("PROCESSAR DADOS"):
 
 # --- RODAPÉ ---
 st.markdown("---")
+
 st.markdown("<p style='text-align: center; color: gray;'>Desenvolvido pelo Comandante Lobo Alfa | Powered by AURA & n8n</p>", unsafe_allow_html=True)
