@@ -19,7 +19,7 @@ st.markdown("""
     
     /* Texto geral branco/cinza (para corrigir celular no modo claro) */
     .stApp p, .stApp div, .stApp li, .stApp span, .stMarkdown {
-        color: #E0E0E0 !important;
+        color: #E0E0E0;
     }
 
     /* TÍTULOS: Força Turquesa no H1 e nos SPANS dentro dele */
@@ -91,6 +91,7 @@ if st.button("PROCESSAR DADOS"):
 st.markdown("---")
 
 st.markdown("<p style='text-align: center; color: gray;'>Desenvolvido pelo Comandante Lobo Alfa | Powered by AURA & n8n</p>", unsafe_allow_html=True)
+
 
 
 
