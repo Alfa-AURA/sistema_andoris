@@ -9,27 +9,27 @@ st.set_page_config(
 )
 
 # --- ESTILO VISUAL (MANTIDO) ---
-# --- ESTILO VISUAL (ATUALIZADO PARA FORÇAR TEXTO CLARO) ---
+# --- ESTILO VISUAL (CORRIGIDO: TURQUESA BLINDADO) ---
 st.markdown("""
     <style>
-    /* Força o fundo escuro */
+    /* Fundo escuro */
     .stApp {
         background-color: #0e1117;
     }
     
-    /* CORREÇÃO: Força todo texto (p, listas, divs) a ser branco/cinza claro */
+    /* Texto geral branco/cinza (para corrigir celular no modo claro) */
     .stApp p, .stApp div, .stApp li, .stApp span, .stMarkdown {
         color: #E0E0E0 !important;
     }
 
-    /* Títulos em Turquesa */
-    h1, h2, h3 {
+    /* TÍTULOS: Força Turquesa no H1 e nos SPANS dentro dele */
+    h1, h1 span, h2, h2 span, h3, h3 span {
         color: #40E0D0 !important; 
         text-align: center;
     }
     
     /* Labels dos inputs em Verde */
-    .stTextInput > label {
+    .stTextInput > label, .stTextInput > label > span {
         color: #00FF7F !important;
         font-weight: bold;
     }
@@ -37,7 +37,7 @@ st.markdown("""
     /* Botões */
     div.stButton > button {
         background-color: #40E0D0;
-        color: black !important; /* Texto do botão deve ser preto */
+        color: black !important;
         border-radius: 10px;
         border: none;
     }
@@ -61,7 +61,7 @@ if st.button("PROCESSAR DADOS"):
         with st.spinner('📡 Andoris contatando base de dados...'):
             try:
                 # Pega o link do cofre secreto do Streamlit
-                webhook_url = st.secrets["https://loboalpha.app.n8n.cloud/webhook-test/andoris-chat-pcs"]
+                webhook_url = st.secrets["WEBHOOK_URL"]
 
                 # 2. O pacote de dados que vamos enviar (JSON)
                 payload = {"pergunta": pergunta}
@@ -89,6 +89,7 @@ if st.button("PROCESSAR DADOS"):
 st.markdown("---")
 
 st.markdown("<p style='text-align: center; color: gray;'>Desenvolvido pelo Comandante Lobo Alfa | Powered by AURA & n8n</p>", unsafe_allow_html=True)
+
 
 
 
