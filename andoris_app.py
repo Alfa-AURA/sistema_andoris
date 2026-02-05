@@ -9,16 +9,44 @@ st.set_page_config(
 )
 
 # --- ESTILO VISUAL (MANTIDO) ---
+# --- ESTILO VISUAL (ATUALIZADO PARA FORÇAR TEXTO CLARO) ---
 st.markdown("""
     <style>
-    .stApp { background-color: #0e1117; }
-    h1 { color: #40E0D0 !important; text-align: center; }
-    .stTextInput > label { color: #00FF7F !important; font-weight: bold; }
-    div.stButton > button { background-color: #40E0D0; color: black; border-radius: 10px; border: none; }
-    div.stButton > button:hover { background-color: #00FF7F; color: black; }
+    /* Força o fundo escuro */
+    .stApp {
+        background-color: #0e1117;
+    }
+    
+    /* CORREÇÃO: Força todo texto (p, listas, divs) a ser branco/cinza claro */
+    .stApp p, .stApp div, .stApp li, .stApp span, .stMarkdown {
+        color: #E0E0E0 !important;
+    }
+
+    /* Títulos em Turquesa */
+    h1, h2, h3 {
+        color: #40E0D0 !important; 
+        text-align: center;
+    }
+    
+    /* Labels dos inputs em Verde */
+    .stTextInput > label {
+        color: #00FF7F !important;
+        font-weight: bold;
+    }
+    
+    /* Botões */
+    div.stButton > button {
+        background-color: #40E0D0;
+        color: black !important; /* Texto do botão deve ser preto */
+        border-radius: 10px;
+        border: none;
+    }
+    div.stButton > button:hover {
+        background-color: #00FF7F;
+        color: black !important;
+    }
     </style>
     """, unsafe_allow_html=True)
-
 # --- TÍTULO ---
 st.title("🛡️ PROTOCOLO ANDORIS")
 st.markdown("<h3 style='text-align: center; color: white;'>Base de Conhecimento Tático PCS - 2026</h3>", unsafe_allow_html=True)
@@ -60,3 +88,4 @@ if st.button("PROCESSAR DADOS"):
 st.markdown("---")
 
 st.markdown("<p style='text-align: center; color: gray;'>Desenvolvido pelo Comandante Lobo Alfa | Powered by AURA & n8n</p>", unsafe_allow_html=True)
+
