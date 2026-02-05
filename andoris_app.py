@@ -61,8 +61,7 @@ pergunta = st.text_input("Comandante, insira sua consulta operacional:")
 if st.button("PROCESSAR DADOS"):
     if pergunta:
         with st.spinner('📡 Andoris contatando base de dados...'):
-            try:
-    webhook_url = st.secrets["WEBHOOK_URL"]
+            try: webhook_url = st.secrets["WEBHOOK_URL"]
 except:
     webhook_url = "LINK_DE_TESTE_AQUI_SE_QUISER" # Opcional, apenas para não quebrar localmente
 
@@ -92,6 +91,7 @@ except:
 st.markdown("---")
 
 st.markdown("<p style='text-align: center; color: gray;'>Desenvolvido pelo Comandante Lobo Alfa | Powered by AURA & n8n</p>", unsafe_allow_html=True)
+
 
 
 
