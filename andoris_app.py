@@ -40,7 +40,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# --- BARRA LATERAL (SIDEBAR) ---
+# --- BARRA LATERAL (SIDEBAR - MURAL DE HONRA) ---
 with st.sidebar:
     # 1. Identidade Visual (Escudo & Árvore)
     col1, col2 = st.columns([1, 4])
@@ -65,7 +65,7 @@ with st.sidebar:
     # Comando & Inteligência
     st.markdown("**🧠 Inteligência & Estratégia:**")
     st.text("• Lobo Alfa (Coord. Tática)")
-    st.text("• Érica Demondes (Ed. Ambiental & Logística)")
+    st.text("• Érica Demondes (Logística & Dados)") # <--- Ajuste realizado aqui!
     st.text("• AURA (Processamento AI)")
 
     # Agentes de Campo (A Força Operacional)
@@ -81,11 +81,15 @@ with st.sidebar:
     st.success("Conexão Neural: **ESTÁVEL**")
     st.caption("Monitorando 90 Sítios na Serra.")
 
+# --- CABEÇALHO CENTRAL ---
+st.markdown("<h1 style='text-align: center;'>🛡️ PROTOCOLO ANDORIS</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #00FF7F;'><b>Centro de Comando Tático PCS - Serra de Baturité</b></p>", unsafe_allow_html=True)
+
 # --- CONFIGURAÇÃO DE SEGREDOS ---
 try:
     webhook_url = st.secrets["WEBHOOK_URL"]
 except:
-    st.error("🚨 ERRO: Webhook não configurado.")
+    st.error("🚨 ERRO TÁTICO: Webhook não configurado.")
     st.stop()
 
 # --- MEMÓRIA DO CHAT ---
@@ -106,7 +110,7 @@ if prompt := st.chat_input("Solicitar relatório tático..."):
     with st.chat_message("assistant"):
         with st.spinner("Acessando base de dados..."):
             try:
-                # O payload que você validou como funcional!
+                # Payload correto para o n8n
                 response = requests.post(webhook_url, json={"input": prompt})
                 if response.status_code == 200:
                     data = response.json()
@@ -117,5 +121,3 @@ if prompt := st.chat_input("Solicitar relatório tático..."):
                     st.error("Sinal interrompido. Verifique o n8n.")
             except Exception as e:
                 st.error(f"Erro de conexão: {e}")
-
-
