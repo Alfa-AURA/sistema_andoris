@@ -41,17 +41,34 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # --- BARRA LATERAL (SIDEBAR) ---
+# --- BARRA LATERAL (SIDEBAR) ---
 with st.sidebar:
+    # 1. Identidade Visual
     st.image("https://img.icons8.com/neon/96/shield.png", width=80)
-    st.markdown("### 🛡️ STATUS DO SISTEMA")
-    st.info("Andoris: **OPERANTE**")
+    st.markdown("### 🛡️ PROTOCOLO ANDORIS")
+    
+    # 2. A Descrição Oficial (Nova!)
+    st.info("""
+    **Missão:** Inteligência Tática para Conservação.
+    
+    A Andoris atua como o 'Cérebro Digital' do **Projeto Cara-Suja**, processando dados de campo da Serra de Baturité para monitorar a reprodução do *Pyrrhura griseipectus*.
+    
+    **Objetivo:** Garantir que cada ninho, ovo e filhote seja contabilizado na luta contra a extinção.
+    """)
+    
     st.markdown("---")
-    st.markdown("#### 📋 REGRAS TÁTICAS")
-    st.write("1. Consultas por Sítio ou Caixa.")
-    st.write("2. Cálculos automáticos de Ovos/Filhotes.")
-    st.write("3. Alertas de 15 dias (Em breve).")
+    
+    # 3. Status e Regras
+    st.markdown("#### 📡 STATUS OPERACIONAL")
+    st.success("Conexão Neural: **ESTÁVEL**")
+    st.warning("Próxima Sincronização: **08/02**") # Exemplo de data futura
+    
     st.markdown("---")
-    st.caption("Desenvolvido por: Lobo Alfa & AURA")
+    
+    # 4. Créditos
+    st.caption("🛠️ **Operadores do Sistema:**")
+    st.caption("Cmte. Lobo Alfa (Estratégia)")
+    st.caption("Agente AURA (Processamento)")
 
 # --- CABEÇALHO CENTRAL ---
 st.markdown("<h1 style='text-align: center;'>🛡️ PROTOCOLO ANDORIS</h1>", unsafe_allow_html=True)
@@ -93,3 +110,4 @@ if prompt := st.chat_input("Solicitar relatório tático..."):
                     st.error("Sinal interrompido. Verifique o n8n.")
             except Exception as e:
                 st.error(f"Erro de conexão: {e}")
+
