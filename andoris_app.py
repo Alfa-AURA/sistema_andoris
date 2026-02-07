@@ -41,38 +41,45 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # --- BARRA LATERAL (SIDEBAR) ---
-# --- BARRA LATERAL (SIDEBAR) ---
 with st.sidebar:
-    # 1. Identidade Visual
-    st.image("https://img.icons8.com/neon/96/shield.png", width=80)
-    st.markdown("### 🛡️ PROTOCOLO ANDORIS")
+    # 1. Identidade Visual (Escudo & Árvore)
+    col1, col2 = st.columns([1, 4])
+    with col1:
+        st.write("🛡️")
+    with col2:
+        st.write("🌳 **PROTOCOLO ANDORIS**")
     
-    # 2. A Descrição Oficial (Nova!)
+    # 2. A Missão (Texto Oficial)
     st.info("""
-    **Missão:** Inteligência Tática para Conservação.
+    **Missão:** Inteligência de Conservação.
     
-    A Andoris atua como o 'Cérebro Digital' do **Projeto Cara-Suja**, processando dados de campo da Serra de Baturité para monitorar a reprodução do *Pyrrhura griseipectus*.
-    
-    **Objetivo:** Garantir que cada ninho, ovo e filhote seja contabilizado na luta contra a extinção.
+    A Andoris é o 'Cérebro Digital' que processa os dados vitais da Serra de Baturité para proteger o *Pyrrhura griseipectus*.
     """)
     
     st.markdown("---")
     
-    # 3. Status e Regras
-    st.markdown("#### 📡 STATUS OPERACIONAL")
-    st.success("Conexão Neural: **ESTÁVEL**")
-    st.warning("Próxima Sincronização: **08/02**") # Exemplo de data futura
+    # 3. MURAL DE HONRA (A Alma do Projeto)
+    st.markdown("#### 🎖️ ESQUADRÃO DE ELITE (PCS)")
+    st.caption("*A inteligência deste sistema é construída pelo esforço diário desta equipe:*")
+    
+    # Comando & Inteligência
+    st.markdown("**🧠 Inteligência & Estratégia:**")
+    st.text("• Lobo Alfa (Coord. Tática)")
+    st.text("• Érica Demondes (Ed. Ambiental & Logística)")
+    st.text("• AURA (Processamento AI)")
+
+    # Agentes de Campo (A Força Operacional)
+    st.markdown("**🔭 Operações de Campo (Coleta):**")
+    st.text("• Carlos Jorge")
+    st.text("• Werlyson Pinheiro")
+    st.text("• Jonas Cruz")
     
     st.markdown("---")
     
-    # 4. Créditos
-    st.caption("🛠️ **Operadores do Sistema:**")
-    st.caption("Cmte. Lobo Alfa (Estratégia)")
-    st.caption("Agente AURA (Processamento)")
-
-# --- CABEÇALHO CENTRAL ---
-st.markdown("<h1 style='text-align: center;'>🛡️ PROTOCOLO ANDORIS</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #00FF7F;'><b>Centro de Comando Tático PCS - Serra de Baturité</b></p>", unsafe_allow_html=True)
+    # 4. Status do Sistema
+    st.markdown("#### 📡 STATUS DE REDE")
+    st.success("Conexão Neural: **ESTÁVEL**")
+    st.caption("Monitorando 90 Sítios na Serra.")
 
 # --- CONFIGURAÇÃO DE SEGREDOS ---
 try:
@@ -110,4 +117,5 @@ if prompt := st.chat_input("Solicitar relatório tático..."):
                     st.error("Sinal interrompido. Verifique o n8n.")
             except Exception as e:
                 st.error(f"Erro de conexão: {e}")
+
 
