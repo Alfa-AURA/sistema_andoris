@@ -93,3 +93,13 @@ if prompt := st.chat_input("Digite sua mensagem para a Andoris..."):
                     st.error(f"Falha na comunicação: Código {response.status_code}")
             except Exception as e:
                 st.error(f"Erro de conexão: {e}")
+
+
+# --- RODAPÉ ---
+st.markdown("---")
+
+st.markdown("<p style='text-align: center; color: gray;'>Desenvolvido pelo Comandante Lobo Alfa | Powered by AURA & n8n</p>", unsafe_allow_html=True)
+
+
+
+
